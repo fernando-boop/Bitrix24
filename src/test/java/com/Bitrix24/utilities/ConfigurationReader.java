@@ -11,7 +11,7 @@ public class ConfigurationReader {
     static{
         try {
             //reading the file --> provide path of the file
-            FileInputStream fileInputStream = new FileInputStream("configuration.properties");
+            FileInputStream fileInputStream = new FileInputStream("config.properties");
 
             //load the contents of the file to the properties object
             properties.load(fileInputStream);
