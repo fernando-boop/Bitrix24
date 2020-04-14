@@ -14,7 +14,7 @@ import org.testng.annotations.*;
 //UserName: hr9@cybertekschool.com, password: UserUser, environment: https://login2.nextbasecrm.com/
 
 
-public class SelimUS4_Poll_Test {
+public class Selim {
     WebDriver driver;
     WebDriverWait wait;
     ExtentReports report;
