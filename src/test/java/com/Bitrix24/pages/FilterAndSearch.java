@@ -2,14 +2,13 @@ package com.Bitrix24.pages;
 //  AUTHOR: A_I_K_A
 
 import com.Bitrix24.utilities.Driver;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class AikasPage {
+public class FilterAndSearch {
 
-    public AikasPage() {
+    public FilterAndSearch() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 

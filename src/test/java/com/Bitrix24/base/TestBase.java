@@ -1,14 +1,11 @@
 package com.Bitrix24.base;
 
 import com.Bitrix24.pages.ActivityStream;
-import com.Bitrix24.pages.AikasPage;
+import com.Bitrix24.pages.FilterAndSearch;
 import com.Bitrix24.pages.LoginPage;
 import com.Bitrix24.utilities.ConfigurationReader;
 import com.Bitrix24.utilities.Driver;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -19,7 +16,7 @@ public abstract class TestBase {
     protected WebDriverWait wait;
     protected LoginPage loginPage;
     protected ActivityStream dashboardPage;
-    protected AikasPage aika;
+    protected FilterAndSearch filterAndSearch;
 
 
 
@@ -31,7 +28,7 @@ public abstract class TestBase {
         wait = new WebDriverWait(driver, 10);
         loginPage = new LoginPage();
         dashboardPage = new ActivityStream();
-        aika = new AikasPage();
+        filterAndSearch = new FilterAndSearch();
 
 
     }
@@ -39,6 +36,6 @@ public abstract class TestBase {
     @AfterMethod
     public void tearDownMethod() throws InterruptedException {
         Thread.sleep(1000);
-        //Driver.closeDriver();
+        Driver.closeDriver();
     }
 }

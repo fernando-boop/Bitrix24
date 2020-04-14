@@ -21,45 +21,45 @@ public class US9_AC1 extends TestBase {
         wait.until(ExpectedConditions.titleContains("Portal"));
 
         // Click Filter and Search -> Work -> Verified the page by tag "Work"
-        wait.until(ExpectedConditions.elementToBeClickable(aika.filterAndSearch));
-        aika.filterAndSearch.click();
-        wait.until(ExpectedConditions.elementToBeClickable(aika.work));
-        aika.work.click();
-        assertEquals(aika.workVerify.getText(), "Work");
-        wait.until(ExpectedConditions.elementToBeClickable(aika.x));
-        aika.x.click();
+        wait.until(ExpectedConditions.elementToBeClickable(filterAndSearch.filterAndSearch));
+        filterAndSearch.filterAndSearch.click();
+        wait.until(ExpectedConditions.elementToBeClickable(filterAndSearch.work));
+        filterAndSearch.work.click();
+        assertEquals(filterAndSearch.workVerify.getText(), "Work");
+        wait.until(ExpectedConditions.elementToBeClickable(filterAndSearch.x));
+        filterAndSearch.x.click();
 
         // Click Filter and Search -> Favorites -> Verified the page by tag "Favorites"
-        wait.until(ExpectedConditions.elementToBeClickable(aika.filterAndSearch));
-        aika.filterAndSearch.click();
-        wait.until(ExpectedConditions.elementToBeClickable(aika.favorites));
-        aika.favorites.click();
-        assertEquals(aika.favoritesVerify.getText(), "Favorites");
-        aika.x.click();
+        wait.until(ExpectedConditions.elementToBeClickable(filterAndSearch.filterAndSearch));
+        filterAndSearch.filterAndSearch.click();
+        wait.until(ExpectedConditions.elementToBeClickable(filterAndSearch.favorites));
+        filterAndSearch.favorites.click();
+        assertEquals(filterAndSearch.favoritesVerify.getText(), "Favorites");
+        filterAndSearch.x.click();
 
         // Click Filter and Search -> My Activities -> Verified the page by tag "My Activity"
-        wait.until(ExpectedConditions.elementToBeClickable(aika.filterAndSearch));
-        aika.filterAndSearch.click();
-        wait.until(ExpectedConditions.elementToBeClickable(aika.myActivities));
-        aika.myActivities.click();
-        assertEquals(aika.myActivityVerify.getText(), "My Activity");
-        aika.x.click();
+        wait.until(ExpectedConditions.elementToBeClickable(filterAndSearch.filterAndSearch));
+        filterAndSearch.filterAndSearch.click();
+        wait.until(ExpectedConditions.elementToBeClickable(filterAndSearch.myActivities));
+        filterAndSearch.myActivities.click();
+        assertEquals(filterAndSearch.myActivityVerify.getText(), "My Activity");
+        filterAndSearch.x.click();
 
         // Click Filter and Search -> Announcements -> Verified the page by tag "Announcements"
-        wait.until(ExpectedConditions.elementToBeClickable(aika.filterAndSearch));
-        aika.filterAndSearch.click();
-        wait.until(ExpectedConditions.elementToBeClickable(aika.announcements));
-        aika.announcements.click();
-        assertEquals(aika.announcementsVerify.getText(), "Announcements");
-        aika.x.click();
+        wait.until(ExpectedConditions.elementToBeClickable(filterAndSearch.filterAndSearch));
+        filterAndSearch.filterAndSearch.click();
+        wait.until(ExpectedConditions.elementToBeClickable(filterAndSearch.announcements));
+        filterAndSearch.announcements.click();
+        assertEquals(filterAndSearch.announcementsVerify.getText(), "Announcements");
+        filterAndSearch.x.click();
 
         // Click Filter and Search -> WorkFlow -> Verified the page by tag "Workflows"
-        wait.until(ExpectedConditions.elementToBeClickable(aika.filterAndSearch));
-        aika.filterAndSearch.click();
-        wait.until(ExpectedConditions.elementToBeClickable(aika.workFlow));
-        aika.workFlow.click();
-        assertEquals(aika.workFlowsVerify.getText(), "Workflows");
-        aika.x.click();
+        wait.until(ExpectedConditions.elementToBeClickable(filterAndSearch.filterAndSearch));
+        filterAndSearch.filterAndSearch.click();
+        wait.until(ExpectedConditions.elementToBeClickable(filterAndSearch.workFlow));
+        filterAndSearch.workFlow.click();
+        assertEquals(filterAndSearch.workFlowsVerify.getText(), "Workflows");
+        filterAndSearch.x.click();
 
     }
 
