@@ -17,4 +17,25 @@ public class ActivityStream {
     @FindBy(xpath = "//span[@title='Upload files']")
     public WebElement uploadFile;
 
+    @FindBy(id = "feed-add-post-form-tab-calendar")
+    public WebElement event;
+
+    @FindBy (xpath = "(//span[@title='Link']/i)[2]")
+    public WebElement uploadLinkBtn;
+
+    @FindBy(xpath = "//input[@placeholder='Link text']")
+    public WebElement linkText;
+
+    @FindBy (xpath = "//input[@placeholder='Link URL']")
+    public WebElement linkURL;
+
+    @FindBy (xpath = "//input[@value='Save']")
+    public WebElement saveBtn;
+
+    @FindBy (xpath = "//body/a")
+    public WebElement link;
+
+    @FindBy (xpath = "(//iframe[@class='bx-editor-iframe'])[2]")
+    public WebElement iframe;
+
 }
