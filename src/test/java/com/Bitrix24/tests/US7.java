@@ -5,13 +5,9 @@ Author: Jacob
     AC5. User should be able to create a quote by clicking on the Comma icon.
  */
 import com.Bitrix24.base.TestBase;
-import com.Bitrix24.pages.ActivityStream;
 import com.Bitrix24.utilities.ConfigurationReader;
-import com.Bitrix24.utilities.Driver;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
