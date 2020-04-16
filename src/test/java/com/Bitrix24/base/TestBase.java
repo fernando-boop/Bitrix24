@@ -19,8 +19,8 @@ public class TestBase {
 
     @BeforeMethod
     public void setUpMethod(){
-        driver.get(ConfigurationReader.getProperty("url"));
         driver = Driver.getDriver();
+        driver.get(ConfigurationReader.getProperty("url"));
         driver.manage().window().maximize();
         wait = new WebDriverWait(driver, 10);
         loginPage = new LoginPage();
