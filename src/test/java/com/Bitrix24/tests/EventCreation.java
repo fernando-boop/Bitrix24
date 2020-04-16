@@ -26,17 +26,36 @@ public class EventCreation extends TestBase {
 
     @Test
     public void uploadingLinkPositiveTest() throws InterruptedException {
+        test = report.createTest("UploadingLinkPositiveTest");
+
+        test.info("Logging in");
         loginPage.login(ConfigurationReader.getProperty("usernameHelpdesk9"), ConfigurationReader.getProperty("passwordHelpdesk9"));
-        wait.until(ExpectedConditions.visibilityOf(dashboardPage.event));
-        dashboardPage.event.click();
-        wait.until(ExpectedConditions.visibilityOf(dashboardPage.uploadLinkBtn));
-        dashboardPage.uploadLinkBtn.click();
+        wait.until(ExpectedConditions.visibilityOf(activityStream.event));
+
+        test.info("Clicking on event");
+        activityStream.event.click();
+        wait.until(ExpectedConditions.visibilityOf(activityStream.uploadLinkBtn));
+
+        test.info("Clicking on upload link button");
+        activityStream.uploadLinkBtn.click();
+
+        test.info("Entering text");
         Thread.sleep(500);
-        dashboardPage.linkText.sendKeys("Hello Hello");
-        dashboardPage.linkURL.sendKeys("https://www.google.com/");
-        dashboardPage.saveBtn.click();
-        driver.switchTo().frame(dashboardPage.iframe);
-        Assert.assertEquals(dashboardPage.link.getText(), "Hello Hello");
+        activityStream.linkText.sendKeys("Hello Hello");
+
+        test.info("Entering link");
+        activityStream.linkURL.sendKeys("https://www.google.com/");
+
+        test.info("Clinking on save button");
+        activityStream.saveBtn.click();
+
+        driver.switchTo().frame(activityStream.iframe);
+
+        test.info("Verifying that a link was added ");
+        Assert.assertEquals(activityStream.link.getText(), "Hello Hello");
+        test.pass("PASS");
+
+
     }
 
     /**
@@ -51,13 +70,24 @@ public class EventCreation extends TestBase {
 
     @Test
     public void uploadingLinkNegativeTest()  {
+        test = report.createTest("UploadingLinkNegative");
+
+        test.info("Logging in");
         loginPage.login(ConfigurationReader.getProperty("usernameHelpdesk9"), ConfigurationReader.getProperty("passwordHelpdesk9"));
-        wait.until(ExpectedConditions.visibilityOf(dashboardPage.event));
-        dashboardPage.event.click();
-        wait.until(ExpectedConditions.visibilityOf(dashboardPage.uploadLinkBtn));
-        dashboardPage.uploadLinkBtn.click();
-        dashboardPage.saveBtn.click();
-        Assert.assertTrue(dashboardPage.saveBtn.isDisplayed());
+        wait.until(ExpectedConditions.visibilityOf(activityStream.event));
+
+        test.info("Clicking on event");
+        activityStream.event.click();
+        wait.until(ExpectedConditions.visibilityOf(activityStream.uploadLinkBtn));
+
+        test.info("Clicking on upload link button");
+        activityStream.uploadLinkBtn.click();
+
+        test.info("Clicking on save button");
+        activityStream.saveBtn.click();
+
+        test.info("Verifying that user was not able to save without adding text and URL");
+        Assert.assertTrue(activityStream.saveBtn.isDisplayed());
     }
 }
 
