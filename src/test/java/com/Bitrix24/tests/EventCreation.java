@@ -24,20 +24,20 @@ public class EventCreation extends TestBase {
      * 7. verify that user was able to add a link --> actual link text equals expected link text
      */
 
-    @Test
-    public void uploadingLinkPositiveTest() throws InterruptedException {
-        loginPage.login(ConfigurationReader.getProperty("usernameHelpdesk9"), ConfigurationReader.getProperty("passwordHelpdesk9"));
-        wait.until(ExpectedConditions.visibilityOf(dashboardPage.event));
-        dashboardPage.event.click();
-        wait.until(ExpectedConditions.visibilityOf(dashboardPage.uploadLinkBtn));
-        dashboardPage.uploadLinkBtn.click();
-        Thread.sleep(500);
-        dashboardPage.linkText.sendKeys("Hello Hello");
-        dashboardPage.linkURL.sendKeys("https://www.google.com/");
-        dashboardPage.saveBtn.click();
-        driver.switchTo().frame(dashboardPage.iframe);
-        Assert.assertEquals(dashboardPage.link.getText(), "Hello Hello");
-    }
+//    @Test
+//    public void uploadingLinkPositiveTest() throws InterruptedException {
+//        loginPage.login(ConfigurationReader.getProperty("usernameHelpdesk9"), ConfigurationReader.getProperty("passwordHelpdesk9"));
+//        wait.until(ExpectedConditions.visibilityOf(dashboardPage.event));
+//        dashboardPage.event.click();
+//        wait.until(ExpectedConditions.visibilityOf(dashboardPage.uploadLinkBtn));
+//        dashboardPage.uploadLinkBtn.click();
+//        Thread.sleep(500);
+//        dashboardPage.linkText.sendKeys("Hello Hello");
+//        dashboardPage.linkURL.sendKeys("https://www.google.com/");
+//        dashboardPage.saveBtn.click();
+//        driver.switchTo().frame(dashboardPage.iframe);
+//        Assert.assertEquals(dashboardPage.link.getText(), "Hello Hello");
+//    }
 
     /**
      * AC - 2 (Negative)
@@ -49,15 +49,15 @@ public class EventCreation extends TestBase {
      * 7. verify that user not able to save / add a link --> save button is still displayed
      */
 
-    @Test
-    public void uploadingLinkNegativeTest()  {
-        loginPage.login(ConfigurationReader.getProperty("usernameHelpdesk9"), ConfigurationReader.getProperty("passwordHelpdesk9"));
-        wait.until(ExpectedConditions.visibilityOf(dashboardPage.event));
-        dashboardPage.event.click();
-        wait.until(ExpectedConditions.visibilityOf(dashboardPage.uploadLinkBtn));
-        dashboardPage.uploadLinkBtn.click();
-        dashboardPage.saveBtn.click();
-        Assert.assertTrue(dashboardPage.saveBtn.isDisplayed());
-    }
+//    @Test
+//    public void uploadingLinkNegativeTest()  {
+//        loginPage.login(ConfigurationReader.getProperty("usernameHelpdesk9"), ConfigurationReader.getProperty("passwordHelpdesk9"));
+//        wait.until(ExpectedConditions.visibilityOf(dashboardPage.event));
+//        dashboardPage.event.click();
+//        wait.until(ExpectedConditions.visibilityOf(dashboardPage.uploadLinkBtn));
+//        dashboardPage.uploadLinkBtn.click();
+//        dashboardPage.saveBtn.click();
+//        Assert.assertTrue(dashboardPage.saveBtn.isDisplayed());
+//    }
 }
 
