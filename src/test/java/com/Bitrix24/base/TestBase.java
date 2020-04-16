@@ -19,6 +19,7 @@ public class TestBase {
 
     @BeforeMethod
     public void setUpMethod(){
+        driver = Driver.getDriver();
         driver.get(ConfigurationReader.getProperty("url"));
         driver = Driver.getDriver();
         driver.manage().window().maximize();
